@@ -1,0 +1,18 @@
+.post-square {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 100ms ease-in-out;
+}
+
+.post-square:hover {
+  transform: scale(1.02);
+}
+
+.post-content {
+  padding: 30px;
+}
+
+.post-square img {
+  max-width: 100%;
+}

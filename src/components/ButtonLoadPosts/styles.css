@@ -1,0 +1,14 @@
+.button-load-posts {
+  width: 100%;
+  background-color: rgb(73, 138, 160);
+  color: black;
+  border: 0px;
+  padding: 15px 15px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.button-load-posts:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
