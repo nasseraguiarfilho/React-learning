@@ -41,11 +41,7 @@ export const Home = () => {
   };
 
   const noMorePosts = page + postsPerPage >= allPosts.length;
-  const filteredPosts = searchValue
-    ? allPosts.filter((post) => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
-    : posts;
+  const filteredPosts = searchValue ? filterPosts(allPosts, searchValue) : posts;
 
   return (
     <section className="container">
@@ -57,13 +53,18 @@ export const Home = () => {
 
       {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
 
-      {filteredPosts.length === 0 && <p>Não existem posts =(</p>}
+      {filteredPosts.length === 0 && <p>No more posts to show =(</p>}
 
       <div className="button-container">
         {!searchValue && <Button text="Load more posts" onClick={loadMorePosts} disabled={noMorePosts} />}
       </div>
     </section>
   );
+  function filterPosts(allPosts, searchValue) {
+    return allPosts.filter((post) => {
+      return post.title.toLowerCase().includes(searchValue.toLowerCase());
+    });
+  }
 };
 
 export default Home;

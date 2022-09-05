@@ -6,6 +6,6 @@ export const SearchText = ({ onChange }) => {
 };
 
 SearchText.propTypes = {
-  onChange: P.func,
-  searchValue: P.string,
+  onChange: P.func.isRequired,
+  searchValue: P.string.isRequired,
 };
